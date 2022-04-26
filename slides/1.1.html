@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - Markdown Example</title>
+
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/puzzle.css">
+    <!-- <link rel="stylesheet" href="../dist/theme/white.css" id="theme"> -->
+    <style>
+        .sty{
+            top: 5px !important;
+            left: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <!-- Slides are separated by regexp matching newline + three dashes + newline, vertical slides identical but two dashes -->
+            <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" >
+                <script type="text/template">
+                        # C语言云课堂
+
+                        殷华君
+
+                        [SZCU](https://www.szcu.edu.cn/)
+
+                        ![Sample image](https://www.szcu.edu.cn/_upload/tpl/00/6f/111/template111/images/logo.png)
+                        
+                        --
+
+                        ## Overview
+                        - 目标
+                        - 复习
+                        - 学习
+                        
+                        年后
+
+
+                        ---
+
+                        ## Demo 2
+                        Slide 1.2
+
+                        ---
+
+                        ## Demo 2
+                        Slide 2
+                    </script>
+            </section>
+
+            <!-- No "extra" slides, since the separator can't be matched ("---" will become horizontal rulers) -->
+            <section data-markdown data-separator="$x" class="sty">
+                <script type="text/template">
+                        A
+
+                        ---
+
+                        B
+
+                        ---
+
+                        C
+                    </script>
+            </section>
+
+            <!-- Slide attributes -->
+            <section data-markdown>
+                <script type="text/template">
+                        <!-- .slide: data-background="#000000" -->
+                        ## Slide attributes
+                    </script>
+            </section>
+
+            <!-- Element attributes -->
+            <section data-markdown>
+                <script type="text/template">
+                        ## Element attributes
+                        - Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+                        - Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+                    </script>
+            </section>
+
+            <!-- Code -->
+            <section data-markdown>
+                <script type="text/template">
+                        ```php [1|3-5]
+                        public function foo()
+                        {
+                            $foo = array(
+                                'bar' => 'bar'
+                            )
+                        }
+                        ```
+                    </script>
+            </section>
+
+            <!-- Images -->
+            <section data-markdown>
+                <script type="text/template">
+                        ![Sample image](https://s3.amazonaws.com/static.slid.es/logo/v2/slides-symbol-512x512.png)
+                    </script>
+            </section>
+
+            <!-- Math -->
+            <section data-markdown>
+                ## The Lorenz Equations
+                `\[\begin{aligned}
+                \dot{x} &amp; = \sigma(y-x) \\
+                \dot{y} &amp; = \rho x - y - xz \\
+                \dot{z} &amp; = -\beta z + xy
+                \end{aligned} \]`
+            </section>
+
+        </div>
+    </div>
+
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <script src="../plugin/notes/notes.js"></script>
+    <script src="../plugin/math/math.js"></script>
+
+    <script>
+
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+        });
+
+    </script>
+
+</body>
+
+</html>
