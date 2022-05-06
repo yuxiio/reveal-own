@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>computer lecture</title>
+
+    <link rel="stylesheet" href="./dist/reveal.css">
+    <link rel="stylesheet" href="./dist/robot-lung.css">
+    <!-- <link rel="stylesheet" href="../dist/theme/white.css" id="theme"> -->
+    <style>
+        .sty{
+            top: 5px !important;
+            left: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="./plugin/highlight/solarized-light.css">
+</head>
+
+<body>
+    <div class="line top"></div>
+    <div class="line bottom"></div>
+    <div class="line left"></div>
+    <div class="line right"></div>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <!-- Slides are separated by regexp matching newline + three dashes + newline, vertical slides identical but two dashes -->
+            <section data-markdown data-separator="^\n---\n$" 
+            data-separator-vertical="^\n--\n$" data-background="#f5fffc">
+            <!-- d7fff6 fcfffe-->
+                <script type="text/template">
+                        # 电脑知识讲座
+                        Computer Knowledge Lectures
+
+                        殷华君
+
+                        [SZCU](https://www.szcu.edu.cn/)
+
+                        ![Sample image](https://www.szcu.edu.cn/_upload/tpl/00/6f/111/template111/images/logo.png)
+                        
+                        --
+
+                        ## Overview
+                        - 电脑的选购或分析
+                        - 软件推荐
+                        - 日常维护
+
+
+                        ---
+
+                        ## 电脑选购——analysis
+                        ——"我不懂什么东西，反正买贵的错不了......"
+
+                        --
+
+                        首要准则就是需求三角：
+                        - 性能
+                        - 便携
+                        - 续航
+                        
+                        ---
+
+
+                        ---
+
+
+                    </script>
+            </section>
+
+            <!-- Math -->
+            <section data-markdown>
+                ## The Lorenz Equations
+                `\[\begin{aligned}
+                \dot{x} &amp; = \sigma(y-x) \\
+                \dot{y} &amp; = \rho x - y - xz \\
+                \dot{z} &amp; = -\beta z + xy
+                \end{aligned} \]`
+            </section>
+
+        </div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+
+    <script>
+
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+        });
+        // Reveal.configure({ backgroundTransition: 'zoom' });
+
+    </script>
+
+</body>
+
+</html>
