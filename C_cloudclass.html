@@ -301,6 +301,39 @@
                         }
                         ```
 
+                        --
+
+                        来个经典小题目，编写swap函数，需要交换两个参数的值。
+
+                        --
+
+                        ```C
+                        #include <stdio.h>
+                        void swap (int a, int b);
+                        int main (void){
+                            int a , b;
+                            a = 3;
+                            b = 4;
+                            swap(a,b);
+                            printf("a = %d\n",a);
+                            printf("b = %d\n",b);
+                            return 0;
+                        }
+                        void swap (int a, int b){
+                            int c = b;
+                            b = a;
+                            a = c;
+                        }
+                        ```
+
+                        --
+
+                        函数的参数传值是值传递。
+
+                        即，重新定义声明一些与参数类型和数目相同的变量。再将参数的值一一对应拷贝过去。
+                        
+                        原参数，与函数内部参数为两个不同的变量。
+
                         ---
 
                         ## 操作-operate
@@ -357,9 +390,20 @@
                         即，逻辑运算的结果为bool(布尔类型)，分别为true(真)，false(假)。
 
                         但是，在C语言里面，没有布尔类型。只有一个整数类型和它类似。因此，C语言标准规定，整数0为false，
-                        其他任何非0整数（包括负数）都为true.
+                        其他任何非0整数（包括负数）都为true(不过默认值为1).
                         ```C
                         printf("%d\n",13 > 2);
+                        ```
+
+                        --
+
+                        关于返回值：
+
+                        C语言任何的变量和表达式都有值。
+                        ```C 
+                        1 + 1;
+                        2 > 3;
+                        main();//函数也是有值的。
                         ```
 
                         --
@@ -368,6 +412,12 @@
                         - 分支语句——if、else 、switch
                         - 循环语句——while、for
                         - 功能语句——break、continue
+
+                        --
+
+                        [求解素数](https://www.dotcpp.com/oj/problem1139.html)
+                        [统计字符](https://www.dotcpp.com/oj/problem1063.html)
+                        [求整数段的和](https://pintia.cn/problem-sets/14/problems/794)
 
                         ---
 
