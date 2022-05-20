@@ -147,7 +147,7 @@
 
                         --
 
-                        C语言提供的数据类型很简单：字符型、整形、浮点型；(当然大体上的解释意思是这样的)
+                        C语言提供的数据类型很简单：字符型、整型、浮点型；(当然大体上的解释意思是这样的)
                         然而细分起来有很多：
                         - 整型
                             - int ——4个字节(大小具体取决于编译器 (64位))
@@ -362,6 +362,8 @@
                         //a = a + 1；
                         b *= 2;
                         //b = b * 2;
+                        a++; //a++本身为a原来未递增的值，之后a递增1
+                        ++a; //首先a递增1，++a本身为a递增后的值
                         ```
 
                         --
@@ -397,6 +399,18 @@
 
                         --
 
+                        关于一些逻辑的运算符：或、与、非
+
+                        - 或 ， “  ||  ”，有真则真，全假为假
+                        - 与 ， “  &&  ”，全真则真，有假则假
+                        - 非 ， “  ！  ”，逻辑相反。
+
+                        ```C 
+                        printf("%d\n",(c>='a'&&c<='z') || (c>='A'&&c<='Z'));
+                        ```
+
+                        --
+
                         关于返回值：
 
                         C语言任何的变量和表达式都有值。
@@ -408,6 +422,31 @@
 
                         --
 
+                        5个数的相加函数
+                        ```C 
+                        #include <stdio.h>
+                        int add (int a, int b){
+                            return a+b;
+                        }
+                        int add_3(int a,int b,int c){
+                            return add(add(a,b),c);
+                        }
+                        int add_4(int a,int b,int c,int d){
+                            return add(add_3(a,b,c),d);
+                        }
+                        int add_5(int a,int b,int c,int d,int e){
+                            return add(add_4(a,b,c,d),e);
+                        }
+                        int main (void){
+                            printf("%d",add_5(1,2,3,4,5));
+                            return 0;
+                        }
+                        ```
+
+                        练习：编写返回5个数中的最大值的函数max_5
+
+                        --
+
                         当然还有一些其他的操作——语句。
                         - 分支语句——if、else 、switch
                         - 循环语句——while、for
@@ -416,7 +455,9 @@
                         --
 
                         [求解素数](https://www.dotcpp.com/oj/problem1139.html)
+
                         [统计字符](https://www.dotcpp.com/oj/problem1063.html)
+
                         [求整数段的和](https://pintia.cn/problem-sets/14/problems/794)
 
                         ---
